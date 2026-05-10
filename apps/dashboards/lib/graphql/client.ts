@@ -4,7 +4,7 @@ import {
   logServerCall,
 } from "@/lib/api/server-call-logger";
 
-export type GraphqlDomain = "reach";
+export type GraphqlDomain = "reach" | "member-comm" | "user-mgmt" | "mbr-prov";
 
 type DomainConfig = {
   endpointEnv: string;
@@ -17,6 +17,21 @@ const DOMAIN_CONFIG: Record<GraphqlDomain, DomainConfig> = {
     endpointEnv: "REACH_GRAPHQL_ENDPOINT",
     secretEnv: "REACH_GRAPHQL_ADMIN_SECRET",
     service: "reach-graphql",
+  },
+  "member-comm": {
+    endpointEnv: "MEMBER_COMM_GRAPHQL_ENDPOINT",
+    secretEnv: "MEMBER_COMM_GRAPHQL_ADMIN_SECRET",
+    service: "member-comm-graphql",
+  },
+  "user-mgmt": {
+    endpointEnv: "USER_MGMT_GRAPHQL_ENDPOINT",
+    secretEnv: "USER_MGMT_GRAPHQL_ADMIN_SECRET",
+    service: "user-mgmt-graphql",
+  },
+  "mbr-prov": {
+    endpointEnv: "MBR_PROV_GRAPHQL_ENDPOINT",
+    secretEnv: "MBR_PROV_GRAPHQL_ADMIN_SECRET",
+    service: "mbr-prov-graphql",
   },
 };
 
